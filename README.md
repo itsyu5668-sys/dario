@@ -1,18 +1,18 @@
-# SovereignAI
+# Dario
 
 A free, ad-supported AI coding assistant for your terminal.
 
 ```
-sovereign-ai "how do I list files in a directory in bash"
+dario "how do I list files in a directory in bash"
 ```
 
-Every user gets a daily quota of free queries (default 50, same for
+Every user gets a daily quota of free queries (default 150, same for
 everyone, no regional restrictions of any kind). Past the limit, set your
 own Groq API key (`export GROQ_API_KEY=...`) to keep going with no cap.
 
 ## How it works
 
-The CLI sends your question to the SovereignAI server, which answers it
+The CLI sends your question to the Dario server, which answers it
 through a fallback chain of inference providers — **Groq → Cerebras →
 Gemini** — trying the next one whenever the previous is rate-limited or
 fails. Responses may include one small sponsored text block ("Blip") from
@@ -31,14 +31,14 @@ OpenCrater, which is what keeps the service free.
 
 ```
 server/   Fastify backend: quota, inference fallback chain, ad fetch
-cli/      The `sovereign-ai` command
+cli/      The `dario` command
 ```
 
 ## Install & use (users)
 
 ```
-npm install -g sovereign-ai
-sovereign-ai "how do I undo a git commit"
+npm install -g dario
+dario "how do I undo a git commit"
 ```
 
 The CLI ships with the production server URL built in — no setup needed.

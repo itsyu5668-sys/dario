@@ -1,9 +1,9 @@
 {
-  "name": "sovereign-ai",
+  "name": "dario",
   "version": "0.1.0",
   "description": "Free, ad-supported AI coding assistant for your terminal.",
   "bin": {
-    "sovereign-ai": "bin/cli.js"
+    "dario": "bin/cli.js"
   },
   "scripts": {
     "start": "node bin/cli.js"

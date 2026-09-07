@@ -7,7 +7,7 @@ const SERVER_URL = (process.env.SOVEREIGN_AI_SERVER_URL || 'https://sovereign-ai
 const REQUEST_TIMEOUT_MS = 60000;
 
 function usage() {
-  console.error('Usage: sovereign-ai "your coding question"');
+  console.error('Usage: dario "your coding question"');
   process.exit(1);
 }
 
@@ -19,7 +19,7 @@ async function askWithOwnKey(prompt) {
   const completion = await groq.chat.completions.create({
     model: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
     messages: [
-      { role: 'system', content: 'You are SovereignAI, a concise and accurate coding assistant.' },
+      { role: 'system', content: 'You are Dario, a concise and accurate coding assistant.' },
       { role: 'user', content: prompt },
     ],
   });
@@ -39,7 +39,7 @@ async function askServer(prompt) {
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
   } catch {
-    console.error(`Could not reach the SovereignAI server at ${SERVER_URL}.`);
+    console.error(`Could not reach the Dario server at ${SERVER_URL}.`);
     console.error('Check that it is running, or set SOVEREIGN_AI_SERVER_URL to its address.');
     process.exit(1);
   }
