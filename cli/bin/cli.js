@@ -26,7 +26,8 @@ function showBannerIfFirst() {
       const banner = figlet.textSync('DARIO', { horizontalLayout: 'default' });
       const gradientBanner = gradient.rainbow(banner);
       console.log(gradientBanner);
-      console.log(chalk.cyan('\nTip: Set GROQ_API_KEY to use your own key and skip the daily limit.\n'));
+      console.log(chalk.dim('\nAsk anything code-related, right from your terminal.'));
+      console.log(chalk.dim('Free, no signup — 150 questions a day, on the house.\n'));
       fs.writeFileSync(WELCOME_FILE, '');
     } catch (err) {
       // silently ignore figlet errors
