@@ -1,5 +1,5 @@
 {
-  "name": "dario",
+  "name": "@npmdevy25/dario",
   "version": "0.1.1",
   "description": "Free, ad-supported AI coding assistant for your terminal.",
   "bin": {
