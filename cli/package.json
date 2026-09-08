@@ -1,6 +1,6 @@
 {
-  "name": "@npmdevy25/dario",
-  "version": "0.1.1",
+  "name": "askdario",
+  "version": "0.1.2",
   "description": "Free, ad-supported AI coding assistant for your terminal.",
   "bin": {
     "dario": "bin/cli.js"
