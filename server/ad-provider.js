@@ -61,7 +61,9 @@ function formatBlip(blip) {
 
 async function getAd(prompt) {
   const publisherKey = process.env.OPENCRATER_PUBLISHER_KEY;
-  if (publisherKey) {
+  if (!publisherKey) {
+    console.log('[ad-provider] no OPENCRATER_PUBLISHER_KEY set, skipping OpenCrater');
+  } else {
     try {
       const blip = await Promise.race([
         sponsor.fetch({
@@ -72,9 +74,13 @@ async function getAd(prompt) {
         }),
         new Promise((resolve) => setTimeout(() => resolve(null), AD_TIMEOUT_MS)),
       ]);
-      if (blip) return formatBlip(blip);
-    } catch {
-      // fall through to affiliate fallback
+      if (blip) {
+        console.log('[ad-provider] got a Blip from OpenCrater');
+        return formatBlip(blip);
+      }
+      console.log('[ad-provider] OpenCrater returned no fill');
+    } catch (err) {
+      console.log('[ad-provider] OpenCrater sponsor.fetch threw:', err && err.message);
     }
   }
   return affiliateFallback(prompt);
