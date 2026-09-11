@@ -11,11 +11,6 @@ const { sponsor } = require('opencrater');
 
 const AD_TIMEOUT_MS = 4000;
 
-// Fallback sponsors shown when OpenCrater has no fill (still in review, no
-// campaign, or errors). Keyed by topic tag; the server picks one whose tag
-// appears in the user's prompt, else a random one. Empty table = show
-// nothing, same as before. Links must be real affiliate URLs supplied by
-// the operator — never placeholders.
 const AFFILIATE_LINKS = {
   // docker:     { label: '...', text: '...', url: 'https://...?ref=...' },
   // database:   { label: '...', text: '...', url: 'https://...?ref=...' },
